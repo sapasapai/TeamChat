@@ -1,0 +1,48 @@
+<mvc:View controllerName="saphire.controller.Chats" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    core:require="{
+        ChatFormatter: 'saphire/formatter/ChatFormatter'
+    }">
+
+    <Page showHeader="false" showNavButton="false">
+        <content>
+            <List id="chatList" 
+                noDataText="No chats available." 
+                growing="true" 
+                growingScrollToLoad="true" 
+                growingThreshold="20" 
+                items="{ path: 'conversations>/' }" 
+                itemPress="onChatPress">
+                <headerToolbar>
+                    <Toolbar>
+                        <SearchField width="20rem" search="onSearch" placeholder="Search contacts..."/>
+                    </Toolbar>
+                </headerToolbar>
+                <CustomListItem type="Navigation" press="onChatPress">
+                    <HBox alignItems="Center" class="sapUiSmallMargin">
+                        <Avatar 
+                            src="{path: 'conversations>photo', formatter: 'ChatFormatter.formatUserPhoto'}" 
+                            displaySize="S" 
+                            class="sapUiSmallMarginEnd"
+                            fallbackIcon="sap-icon://person-placeholder"/>
+                        <VBox class="sapUiNoMargin" width="100%">
+                            <HBox justifyContent="SpaceBetween" width="100%">
+                                <Text 
+                                    text="{conversations>contactName}" 
+                                    class="sapUiTinyMarginBottom"
+                                    maxLines="1"/>
+                            </HBox>
+                            <Text 
+                                text="{path: 'conversations>lastMessage', formatter: 'ChatFormatter.truncateMessage'}" 
+                                class="sapThemeTextColor"
+                                maxLines="1"/>
+                        </VBox>
+                    </HBox>
+                </CustomListItem>
+            </List>
+        </content>
+    </Page>
+
+</mvc:View>

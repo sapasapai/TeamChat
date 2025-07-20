@@ -1,0 +1,222 @@
+/* Main Chat Container */
+.chatContainer {
+    background-color: #f0f2f5 !important;
+    height: 100%;
+    padding: 0;
+}
+
+.chatMessagesList {
+    background-color: #f0f2f5 !important;
+}
+
+.chatListItem {
+    background: transparent !important;
+    border: none !important;
+    padding: 2px 8px;
+}
+
+/* Message Strips Styling */
+.sentMessageStrip {
+    background-color: #e5e5ea !important;
+    border: none !important;
+    border-radius: 18px 18px 4px 18px !important;
+    padding: 8px 12px !important;
+    margin: 2px 0 !important;
+    box-shadow: 0 1px 0.5px rgba(0,0,0,.13) !important;
+}
+
+.receivedMessageStrip {
+    background-color: #007aff !important;
+    border: none !important;
+    border-radius: 18px 18px 18px 4px !important;
+    padding: 8px 12px !important;
+    margin: 2px 0 !important;
+    box-shadow: 0 1px 0.5px rgba(0,0,0,.13) !important;
+}
+
+/* Message Text Colors */
+.sentMessageStrip .sapMText {
+    color: #000000 !important;
+}
+
+.receivedMessageStrip .sapMText {
+    color: #ffffff !important;
+}
+
+/* Message Boxes */
+.sentMessageBox, .receivedMessageBox {
+    margin: 2px 8px;
+    max-width: 75%;
+}
+
+/* Message Container */
+.messageContainer {
+    margin: 1px 0 !important;
+    width: 100%;
+}
+
+/* Avatar Styling */
+.messageAvatar {
+    margin: 4px 8px 4px 0 !important;
+    align-self: flex-end !important;
+}
+
+/* Sender Name */
+.senderName {
+    font-size: 0.75rem;
+    color: #65676B;
+    margin: 0 0 2px 4px;
+}
+
+/* Message Time and Status */
+.messageTime {
+    font-size: 0.75rem !important;
+    color: #89919a !important;
+    margin: 2px 4px !important;
+}
+
+.messageFooter {
+    margin-top: 2px;
+    padding: 0 4px;
+}
+
+/* Delivery Status Icons */
+.deliveryStatus {
+    margin-left: 4px;
+    display: flex;
+    align-items: center;
+}
+
+.secondTick {
+    margin-left: -6px !important;
+}
+
+/* Date Separator */
+.dateSeparatorStrip {
+    background-color: rgba(255,255,255,0.9) !important;
+    border: none !important;
+    border-radius: 12px !important;
+    padding: 6px 12px !important;
+    margin: 16px 0 !important;
+    box-shadow: 0 1px 0.5px rgba(0,0,0,.13) !important;
+    width: auto !important;
+}
+
+.dateSeparatorStrip .sapMText {
+    color: #8e8e93 !important;
+    font-size: 12px !important;
+}
+
+/* Chat Page Specific */
+.chatPage .sapFDynamicPageContent {
+    padding: 0 !important;
+    background-color: #f0f2f5 !important;
+}
+
+.chatPage .sapMList {
+    background: transparent !important;
+}
+
+.chatPage .sapMListItem {
+    background: transparent !important;
+    border: none !important;
+}
+
+/* Message Input Bar */
+.messageInputBar {
+    background-color: #f0f2f5 !important;
+    border-top: 1px solid #e9edef !important;
+    padding: 8px !important;
+}
+
+/* FeedInput Customization */
+.sapMFeedIn {
+    background-color: #ffffff !important;
+    border-radius: 24px !important;
+    border: 1px solid #e9edef !important;
+    padding: 8px 12px !important;
+}
+
+.sapMFeedInContainer {
+    background: transparent !important;
+}
+
+/* Remove MessageStrip default elements */
+.sentMessageStrip .sapMMsgStripCloseButton,
+.receivedMessageStrip .sapMMsgStripCloseButton,
+.sentMessageStrip .sapMMsgStripIcon,
+.receivedMessageStrip .sapMMsgStripIcon,
+.dateSeparatorStrip .sapMMsgStripCloseButton,
+.dateSeparatorStrip .sapMMsgStripIcon {
+    display: none !important;
+}
+
+/* Header Styling */
+.sapFDynamicPageTitle {
+    background-color: #f0f2f5 !important;
+    border-bottom: 1px solid #e9edef !important;
+    padding: 8px 16px !important;
+}
+
+/* Message Groups Spacing */
+.messageContainer .sapUiTinyMarginTopBottom {
+    margin: 2px 0;
+}
+
+/* Text Wrapping */
+.sapMText {
+    word-wrap: break-word !important;
+    white-space: pre-wrap !important;
+}
+
+/* List End Marker */
+#listEndMarker {
+    height: 1px;
+    visibility: hidden;
+}
+
+/* Remove default padding */
+.sapUiContentPadding {
+    padding: 0 !important;
+}
+
+/* Message Strip Hover Effect */
+.sentMessageStrip:hover,
+.receivedMessageStrip:hover {
+    opacity: 0.95;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 600px) {
+    .sentMessageBox,
+    .receivedMessageBox {
+        max-width: 85%;
+    }
+
+    .messageAvatar {
+        margin: 2px 4px 2px 0 !important;
+    }
+}
+
+/* Ensure proper spacing between messages */
+.sapMListItems {
+    padding: 8px 0;
+}
+
+/* Custom scrollbar */
+.chatContainer ::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chatContainer ::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.chatContainer ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+.chatContainer ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

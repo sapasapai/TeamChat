@@ -1,0 +1,144 @@
+<mvc:View 
+    xmlns:core="sap.ui.core" 
+    controllerName="saphire.controller.Chat" 
+    displayBlock="true"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:layout="sap.ui.layout" 
+    height="100%"
+    core:require="{
+        LayoutManager: 'saphire/util/LayoutManager',
+        ChatFormatter: 'saphire/formatter/ChatFormatter'
+    }">
+
+    <f:DynamicPage id="chatPage" class="sapUiContentPadding chatPage" showFooter="true">
+        <!-- Chat Header -->
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:heading>
+                    <HBox alignItems="Center" class="sapUiMediumMarginTop">
+                        <Avatar 
+                            src="{path: 'currentContact>/photo', formatter: 'ChatFormatter.formatUserPhoto'}" 
+                            displaySize="M" 
+                            class="sapUiMediumMarginEnd"
+                            fallbackIcon="sap-icon://person-placeholder"/>
+                        <VBox class="sapUiNoMargin">
+                            <Title text="{currentContact>/contactName}" class="sapUiNoMarginBottom"/>
+                            <Text text="Active 1h ago" class="sapThemeTextColor sapUiTinyText"/>
+                        </VBox>
+                    </HBox>
+                </f:heading>
+                <f:actions>
+                    <Text text="Phone: {currentContact>/phone}" class="sapThemeTextColor"/>
+                </f:actions>
+                <f:navigationActions>
+                    <Button 
+                        icon="sap-icon://exit-full-screen" 
+                        press="getModel('appLayout').exitFullScreen()" 
+                        visible="{= ${appLayout>/isFullScreen} }" 
+                        type="Transparent" />
+                    <Button 
+                        icon="sap-icon://full-screen" 
+                        press="LayoutManager.getInstance().setMidColumnFullScreen()" 
+                        visible="{= !${appLayout>/isFullScreen} }" 
+                        type="Transparent" />
+                </f:navigationActions>
+            </f:DynamicPageTitle>
+        </f:title>
+
+        <!-- Chat Messages -->
+        <f:content>
+            <VBox class="chatContainer">
+                <List id="messageList" 
+                    showNoData="false" 
+                    showSeparators="None" 
+                    items="{ path: 'messages>/' }"
+                    class="chatMessagesList">
+
+                    <CustomListItem class="chatListItem">
+                        <!-- Date Separator -->
+                        <VBox visible="{messages>isDateSeparator}" width="100%" alignItems="Center">
+                            <MessageStrip
+                                text="{messages>dateText}"
+                                showIcon="false"
+                                class="dateSeparatorStrip">
+                            </MessageStrip>
+                        </VBox>
+
+                        <!-- Message Content -->
+                        <VBox visible="{= !${messages>isDateSeparator} }" width="100%" class="messageContainer">
+                            <HBox justifyContent="{= ${messages>isSent} ? 'End' : 'Start' }" 
+                                  alignItems="Start" 
+                                  width="100%" 
+                                  class="sapUiTinyMarginTopBottom">
+
+                                <!-- Avatar for received messages -->
+                                <Avatar visible="{= !${messages>isSent} }"
+                                        src="{path: 'currentContact>/photo', formatter: 'ChatFormatter.formatUserPhoto'}"
+                                        displaySize="XS"
+                                        class="sapUiTinyMarginEnd messageAvatar"
+                                        fallbackIcon="sap-icon://person-placeholder"/>
+
+                                <!-- Message Content -->
+                                <VBox maxWidth="75%" class="{= ${messages>isSent} ? 'sentMessageBox' : 'receivedMessageBox' }">
+                                    <!-- Sender Name for received messages -->
+                                    <Text text="{messages>sender}"
+                                          visible="{= !${messages>isSent} &amp;&amp; !${messages>isGrouped} }"
+                                          class="senderName"/>
+
+                                    <!-- Message Bubble -->
+													<MessageStrip
+						text="{messages>text}"
+						type="{= ${messages>isSent} ? 'Information' : 'Success' }"
+						showIcon="false"
+						class="{= ${messages>isSent} ? 'sentMessageStrip' : 'receivedMessageStrip' }">
+					</MessageStrip>
+
+                                    <!-- Message Footer -->
+                                    <HBox justifyContent="{= ${messages>isSent} ? 'End' : 'Start' }" 
+                                          alignItems="Center" 
+                                          class="messageFooter">
+                                        <Text text="{messages>formattedTime}" 
+                                              class="sapUiTinyMarginEnd messageTime"/>
+
+                                        <!-- Delivery Status for sent messages -->
+                                        <HBox visible="{messages>isSent}" 
+                                              alignItems="Center" 
+                                              class="deliveryStatus">
+                                            <core:Icon 
+                                                src="sap-icon://accept" 
+                                                size="0.75rem"
+                                                color="{= ${messages>read} ? 'blue' : ${messages>delivered} ? 'gray' : '#89919a'}"
+                                                visible="{messages>sent}"/>
+                                            <core:Icon 
+                                                src="sap-icon://accept" 
+                                                size="0.75rem"
+                                                color="{= ${messages>read} ? 'blue' : ${messages>delivered} ? 'gray' : '#89919a'}"
+                                                class="secondTick"
+                                                visible="{messages>delivered}"/>
+                                        </HBox>
+                                    </HBox>
+                                </VBox>
+                            </HBox>
+                        </VBox>
+                    </CustomListItem>
+                </List>
+                <Text id="listEndMarker" text="" visible="false" />
+            </VBox>
+        </f:content>
+
+        <!-- Message Input -->
+        <f:footer>
+            <OverflowToolbar class="messageInputBar">
+                <FeedInput 
+                    id="newMessageInput" 
+                    post="onPostMessage" 
+                    showIcon="false" 
+                    placeholder=""
+                    maxLength="1000"
+                    width="100%"/>
+            </OverflowToolbar>
+        </f:footer>
+    </f:DynamicPage>
+</mvc:View>

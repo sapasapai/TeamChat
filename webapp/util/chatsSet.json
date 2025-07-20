@@ -1,0 +1,33 @@
+[{
+	"phone": "649120010",
+	"contactName": "Mike",
+	"photo": "images/miguel.jpg"
+}, {
+	"phone": "649120011",
+	"contactName": "Yalan",
+	"photo": "images/yalan.jpg"
+}, {
+	"phone": "649120012",
+	"contactName": "Emilio",
+	"photo": "images/john.jpg"
+}, {
+	"phone": "649120013",
+	"contactName": "Sergio",
+	"photo": "images/joseph.jpg"
+}, {
+	"phone": "649120014",
+	"contactName": "Luise",
+	"photo": "images/jane.jpg"
+}, {
+	"phone": "649120015",
+	"contactName": "Lizzy",
+	"photo": "images/naomi.jpg"
+}, {
+	"phone": "649120016",
+	"contactName": "Kyra",
+	"photo": "images/nora.jpg"
+}, {
+	"phone": "649120017",
+	"contactName": "Pablo",
+	"photo": "images/sharon.jpg"
+}]

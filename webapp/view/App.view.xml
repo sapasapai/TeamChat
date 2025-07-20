@@ -1,0 +1,31 @@
+<mvc:View controllerName="saphire.controller.App" displayBlock="true"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.f">
+
+	<Shell id="shell">
+		<App id="app">
+			<!-- Main Header -->
+			<Page showHeader="true" showNavButton="false">
+				<customHeader>
+					<Toolbar class="sapUiMediumMarginBottom">
+						<!-- Left: Logo -->
+						<Image src="images/logo.png" width="3rem" height="3.5rem"/>
+
+						<!-- Center: Title -->
+						<ToolbarSpacer/>
+						<Title text="Team Chat" textAlign="Center"/>
+						<ToolbarSpacer/>
+
+						<!-- Right: Version -->
+						<Text text="Version 1.0" class="sapThemeTextColor"/>
+					</Toolbar>
+				</customHeader>
+				<content>
+					<f:FlexibleColumnLayout id="flexibleColumnLayout" backgroundDesign="Solid"/>
+				</content>
+			</Page>
+		</App>
+	</Shell>
+
+</mvc:View>

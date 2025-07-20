@@ -1,0 +1,72 @@
+[{
+	"id": "HAPISTRHQ3BSD",
+	"text": "what's up?",
+	"phone": "649120010",
+	"date": "26/01/2022T12:00",
+	"sent": true,
+	"delivered": true,
+	"read": true
+}, {
+	"id": "OUBTERYBGUFVHX",
+	"text": "I'm fine!",
+	"phone": "649120010",
+	"date": "26/01/2022T12:02",
+	"sent": true,
+	"delivered": true,
+	"read": true
+}, {
+	"id": "34IUZDGFSDFG",
+	"text": "wanna hang out?",
+	"phone": "649120010",
+	"date": "26/01/2022T12:03",
+	"sent": true,
+	"delivered": true,
+	"read": true
+}, {
+	"id": "FESZDVADSGF",
+	"text": "7pm at the bar?",
+	"phone": "649120010",
+	"date": "26/01/2022T12:08",
+	"sent": true,
+	"read": true,
+	"delivered": true
+}, {
+	"id": "SG34TGSDXG",
+	"text": "See you there!",
+	"phone": "649120010",
+	"date": "26/01/2022T12:09",
+	"sent": true,
+	"read": false,
+	"delivered": false
+}, {
+	"text": "Yes!!",
+	"read": true,
+	"delivered": true,
+	"sent": true,
+	"date": "26/01/2022T12:03",
+	"phone": "649120012",
+	"id": "ABGZ46934FDN"
+}, {
+	"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin venenatis tincidunt lacus sed placerat. Morbi volutpat justo vel sagittis volutpat. Nunc bibendum tempus sagittis. Morbi consequat eu magna luctus vestibulum. Nam dapibus elit vulputate mi cursus, ac pretium ipsum feugiat. Praesent pharetra sem a nibh tristique efficitur. Sed vulputate at sapien eget mollis.",
+	"sent": true,
+	"delivered": true,
+	"read": true,
+	"date": "26/01/2022T12:04",
+	"phone": "649120012",
+	"id": "ODIHYP985HEYT"
+}, {
+	"text": "See you there!",
+	"read": true,
+	"delivered": true,
+	"sent": true,
+	"date": "30/01/2022T12:04",
+	"phone": "649120012",
+	"id": "E9S8TGHDIUG"
+}, {
+	"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin venenatis tincidunt lacus sed placerat. Morbi volutpat justo vel sagittis volutpat. Nunc bibendum tempus sagittis. Morbi consequat eu magna luctus vestibulum. Nam dapibus elit vulputate mi cursus, ac pretium ipsum feugiat. Praesent pharetra sem a nibh tristique efficitur. Sed vulputate at sapien eget mollis.",
+	"delivered": true,
+	"sent": true,
+	"date": "30/01/2022T12:04",
+	"phone": "649120012",
+	"id": "HYU54HYI4545"
+}]
